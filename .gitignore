@@ -1,0 +1,9 @@
+# Dependency Directories
+node_modules
+
+# Build folder
+./dist
+
+# lock file
+yarn.lock
+package-lock.json
