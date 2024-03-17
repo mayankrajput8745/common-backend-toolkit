@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v1.1.0...v1.2.0) (2024-03-17)
+
+
+### Features
+
+* **errors and logger of api's:** errors in reponses and responses middleware and API Logger ([500ed67](https://github.com/mayankrajput8745/common-backend-toolkit/commit/500ed6740bd60a720713b5e2fcdba2972f3efc73))
+
 ## 1.1.0 (2024-03-07)
 
 
