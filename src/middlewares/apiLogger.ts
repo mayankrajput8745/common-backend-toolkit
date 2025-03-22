@@ -17,5 +17,6 @@ export const apiLogger = expressWinston.logger({
     meta: false,
     expressFormat: true,
     colorize: true,
+    statusLevels: true,
     skip: (req, _res) => req.method === 'OPTIONS' // Skip logging for OPTIONS requests
 });

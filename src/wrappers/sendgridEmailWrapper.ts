@@ -5,7 +5,9 @@ type SendGridClient = typeof sgMail;
 export class sendGridEmailWrapper {
     private _client?: SendGridClient;
 
-    constructor(private apiKey: string) { }
+    constructor(private apiKey: string) {
+        this.apiKey = apiKey;
+    }
 
     async connect() {
         return new Promise<void>((resolve, reject) => {

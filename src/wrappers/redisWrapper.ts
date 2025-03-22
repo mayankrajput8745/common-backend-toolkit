@@ -14,23 +14,47 @@ export class RedisWrapper {
         return new Promise<void>(async (resolve, reject) => {
             try {
                 this._client = createClient(options);
+
                 this._client.on("ready", () => resolve());
-                this._client.on("error", (err) => reject(err));
-                await this._client.connect();
+                this._client.on("error", (err) => {
+                    // Reject and reset the client to prevent reuse of a faulty connection
+                    this._client = undefined;
+                    reject(err);
+                });
+
+                this._client.connect().catch((err) => {
+                    this._client = undefined;
+                    reject(err);
+                });
             } catch (error) {
+                this._client = undefined;
                 reject(error);
             }
         });
     }
 
     async disconnect() {
-        return new Promise<void>(async (resolve, reject) => {
-            try {
-                await this._client?.quit();
+        return new Promise<void>((resolve, reject) => {
+            if (!this._client) {
+                reject(new Error("Cannot disconnect: Redis client not initialized"));
+                return;
+            }
+
+            // If already disconnected (client is undefined), we resolve immediately
+            if (this._client && !this._client.isOpen) {
                 resolve();
+                return;
+            }
+
+            try {
+                this._client.quit().then(() => {
+                    this._client = undefined; // Reset client after disconnect
+                    resolve();
+                }).catch(reject);
             } catch (error) {
                 reject(error);
             }
         });
     }
-};
+
+}

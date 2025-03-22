@@ -15,10 +15,8 @@ const ConsoleTransport = new transports.Console({
     )
 });
 
-const Logger = createLogger({
+export const logger = createLogger({
     transports: ConsoleTransport,
     exceptionHandlers: ConsoleTransport,
     exitOnError: false
 });
-
-export default Logger;

@@ -1,5 +1,5 @@
 import { Response } from 'express'
-import { authenticationFailureResponse, authorizationFailureResponse, notFoundResponse } from '../responses';
+import { authenticationFailureResponse, authorizationFailureResponse, notFoundResponse } from '../responses/index.js';
 
 enum ErrorType {
     BAD_TOKEN = 'BadTokenError',
