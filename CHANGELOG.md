@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.0.0...v2.1.0) (2025-03-22)
+
+
+### Features
+
+* New Reponses added and session loaction finder added s3 wrapper is added ([e4c86b4](https://github.com/mayankrajput8745/common-backend-toolkit/commit/e4c86b443018f94957115e7527352e02caad8894))
+
 ## [2.0.0](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v1.2.1...v2.0.0) (2024-11-25)
 
 ### [1.2.1](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v1.2.0...v1.2.1) (2024-04-02)
