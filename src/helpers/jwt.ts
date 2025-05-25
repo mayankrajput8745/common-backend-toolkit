@@ -8,7 +8,7 @@ export class JWT {
         if (!privateKey) throw new Error("Private key is required");
 
         // @ts-ignore
-        return promisify(sign)(payload, privateKey, options);
+        return promisify(sign)({ ...payload }, privateKey, options);
     }
 
     async decode(token: string, publicKey: string, validation: ValidationsParams): Promise<JwtPayload> {
@@ -68,7 +68,6 @@ type Payload = {
     iat: number;
     exp: number;
     validity: number;
-    tokenId: string;
 }
 
 const HOUR_IN_DAY = 24;
@@ -79,15 +78,13 @@ export class JwtPayload {
     iss: string;
     aud: string;
     userId: string;
-    tokenId: string;
     iat: number;
     exp: number;
 
-    constructor({ iss, aud, userId, iat, exp, validity, tokenId }: Payload) {
+    constructor({ iss, aud, userId, validity }: Payload) {
         this.iss = iss;
         this.aud = aud;
         this.userId = userId;
-        this.tokenId = tokenId;
         this.iat = Math.floor(Date.now() / 1000);
         this.exp = this.iat + (validity / HOUR_IN_DAY * MINUTES_IN_HOUR * SECONDS_IN_MINUTE);
     }

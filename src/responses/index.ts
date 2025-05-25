@@ -26,7 +26,7 @@ export const forbiddenResponse = (res: Response, errors = [{ message: 'Forbidden
     return res.status(ResponseStatusCode.FORBIDDEN).json({ errors });
 }
 
-export const badrequestResponse = (res: Response, errors = [{ message: 'Bad Request' }]) => {
+export const badRequestResponse = (res: Response, errors = [{ message: 'Bad Request' }]) => {
     return res.status(ResponseStatusCode.BAD_REQUEST).json({ errors });
 }
 
@@ -58,7 +58,7 @@ export const customResponse = (res: Response, message = 'Success', data: any) =>
     return res.status(ResponseStatusCode.SUCCESS).json({ message, ...data });
 }
 
-export const newCreatedResponse = (res: Response, message = 'Successfully Created', data: any) => {
+export const createdResponse = (res: Response, message = 'Successfully Created', data: any) => {
     return res.status(ResponseStatusCode.CREATED).json({ message, data });
 }
 

@@ -8,9 +8,6 @@ export * from './middlewares/apiLogger';
 export * from './middlewares/errorLogger';
 export * from './helpers/logger';
 
-// RabbitMQ Message Broker
-// export * from './messages/rabbitMQ';
-
 // Errors in Responses
 export * from './errors/index';
 
@@ -19,5 +16,6 @@ export * from './responses/index';
 
 // Wrappers
 export * from './wrappers/redisWrapper';
-export * from './wrappers/sendgridEmailWrapper';
+export * from './wrappers/emailWrappers/sendgridEmailWrapper';
+export * from './wrappers/emailWrappers/gmailWrapper';
 export * from './wrappers/twilloSMSwrapper';

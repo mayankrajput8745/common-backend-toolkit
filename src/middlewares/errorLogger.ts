@@ -1,21 +1,13 @@
 import { transports, format } from 'winston';
-import expressWinston from 'express-winston';
+import expressWinston, { logger } from 'express-winston';
 import { isEmpty } from 'lodash';
-import { loadEsm } from 'load-esm';
-
-let chalk: any;
+import chalk from 'chalk';
 
 interface Meta {
     error?: any,
     username?: any,
     [key: string]: any
 }
-
-const loadChalk = async () => {
-    chalk = await loadEsm('chalk');
-};
-
-loadChalk();
 
 export const errorLogger = expressWinston.errorLogger({
     transports: [new transports.Console()],
@@ -38,6 +30,8 @@ export const errorLogger = expressWinston.errorLogger({
             // Handle meta properties safely
             const error = !isEmpty(meta) && !isEmpty(meta.error) ? chalk.bgRed.white(` ${JSON.stringify(meta.error)} `) : 'No error';
             const username = !isEmpty(meta) && !isEmpty(meta.username) ? chalk.blue(` ${JSON.stringify(meta.username)} `) : 'No username';
+
+            console.error({ timestamp, level, message, meta })
 
             // Format the final log string with colorized parts
             return `${timestampColor} ${levelColor}: ${message}, username: ${username}, error: ${error}`;
