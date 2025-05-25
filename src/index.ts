@@ -2,11 +2,12 @@
 
 // Helpers
 export * from './helpers/jwt';
+export * from './helpers/logger';
 
 // Logging Middlewares
 export * from './middlewares/apiLogger';
 export * from './middlewares/errorLogger';
-export * from './helpers/logger';
+export * from './middlewares/authentication';
 
 // Errors in Responses
 export * from './errors/index';
