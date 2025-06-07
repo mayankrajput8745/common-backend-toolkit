@@ -16,6 +16,9 @@ export * from './errors/index';
 export * from './responses/index';
 
 // Wrappers
+export * from './wrappers/awsWrapers/s3Wrapper';
+export * from './wrappers/awsWrapers/lambdaWrapper';
+export * from './wrappers/awsWrapers/sesWrapper';
 export * from './wrappers/redisWrapper';
 export * from './wrappers/emailWrappers/sendgridEmailWrapper';
 export * from './wrappers/emailWrappers/gmailWrapper';
