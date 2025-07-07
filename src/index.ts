@@ -8,6 +8,7 @@ export * from './helpers/logger';
 export * from './middlewares/apiLogger';
 export * from './middlewares/errorLogger';
 export * from './middlewares/authentication';
+export * from './middlewares/sessionLocation';
 
 // Errors in Responses
 export * from './errors/index';

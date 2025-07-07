@@ -10,6 +10,7 @@ export const ResponseStatusCode = {
     UNAUTHORIZED: 401,
     FORBIDDEN: 403,
     NOT_FOUND: 404,
+    TOO_MANY_REQUESTS: 429,
     INTERNAL_SERVER_ERROR: 500
 };
 
@@ -73,4 +74,8 @@ export const noContentFoundErrorResponse = (res: Response, errors = [{ message: 
 
 export const multiStatusResponse = (res: Response, data: any) => {
     return res.status(ResponseStatusCode.MULTI_STATUS).json({ data });
+}
+
+export const tooManyRequestResponse = (res: Response, errors = [{ message: 'Too Many Requests' }]) => {
+    return res.status(ResponseStatusCode.TOO_MANY_REQUESTS).json({ errors });
 }

@@ -31,7 +31,7 @@ export const errorLogger = expressWinston.errorLogger({
             const error = !isEmpty(meta) && !isEmpty(meta.error) ? chalk.bgRed.white(` ${JSON.stringify(meta.error)} `) : 'No error';
             const username = !isEmpty(meta) && !isEmpty(meta.username) ? chalk.blue(` ${JSON.stringify(meta.username)} `) : 'No username';
 
-            console.error({ timestamp, level, message, meta })
+            console.error({ timestamp, level, message, meta });
 
             // Format the final log string with colorized parts
             return `${timestampColor} ${levelColor}: ${message}, username: ${username}, error: ${error}`;
