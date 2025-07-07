@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.1.0...v2.2.0) (2025-07-07)
+
+
+### Features
+
+* Enable get location from client IP & too many request error ([1631dd9](https://github.com/mayankrajput8745/common-backend-toolkit/commit/1631dd923979ec557fed9ec6d1fbb1ffef077563))
+* **Lambda & SES:** Wrapper function added both ([b7039f7](https://github.com/mayankrajput8745/common-backend-toolkit/commit/b7039f74baeb3f086c013ec0857a35269e76e2c5))
+
 ## [2.1.0](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.0.0...v2.1.0) (2025-03-22)
 
 
