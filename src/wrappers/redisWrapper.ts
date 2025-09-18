@@ -1,6 +1,6 @@
-import { createClient, RedisClientOptions } from "redis";
+import Redis, { RedisOptions } from "ioredis";
 
-type RedisClient = ReturnType<typeof createClient>;
+type RedisClient = Redis;
 
 export class RedisWrapper {
     private _client?: RedisClient;
@@ -10,19 +10,13 @@ export class RedisWrapper {
         return this._client;
     }
 
-    async connect(options: RedisClientOptions) {
-        return new Promise<void>(async (resolve, reject) => {
+    async connect(options: RedisOptions) {
+        return new Promise<void>((resolve, reject) => {
             try {
-                this._client = createClient(options);
+                this._client = new Redis(options);
 
-                this._client.on("ready", () => resolve());
-                this._client.on("error", (err) => {
-                    // Reject and reset the client to prevent reuse of a faulty connection
-                    this._client = undefined;
-                    reject(err);
-                });
-
-                this._client.connect().catch((err) => {
+                this._client.once("ready", () => resolve());
+                this._client.once("error", (err) => {
                     this._client = undefined;
                     reject(err);
                 });
@@ -40,21 +34,18 @@ export class RedisWrapper {
                 return;
             }
 
-            // If already disconnected (client is undefined), we resolve immediately
-            if (this._client && !this._client.isOpen) {
+            // If already disconnected, resolve immediately
+            if (this._client.status === "end") {
                 resolve();
                 return;
             }
 
-            try {
-                this._client.quit().then(() => {
-                    this._client = undefined; // Reset client after disconnect
+            this._client.quit()
+                .then(() => {
+                    this._client = undefined;
                     resolve();
-                }).catch(reject);
-            } catch (error) {
-                reject(error);
-            }
+                })
+                .catch(reject);
         });
     }
-
 }

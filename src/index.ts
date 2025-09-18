@@ -24,3 +24,4 @@ export * from './wrappers/redisWrapper';
 export * from './wrappers/emailWrappers/sendgridEmailWrapper';
 export * from './wrappers/emailWrappers/gmailWrapper';
 export * from './wrappers/twilloSMSwrapper';
+export * from './wrappers/kafkaWrapper';
