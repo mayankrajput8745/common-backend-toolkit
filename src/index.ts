@@ -17,10 +17,11 @@ export * from './errors/index';
 export * from './responses/index';
 
 // Wrappers
-export * from './wrappers/awsWrapers/s3Wrapper';
-export * from './wrappers/awsWrapers/lambdaWrapper';
-export * from './wrappers/awsWrapers/sesWrapper';
-export * from './wrappers/redisWrapper';
+export * from './wrappers/awsWrappers/s3Wrapper';
+export * from './wrappers/awsWrappers/lambdaWrapper';
+export * from './wrappers/awsWrappers/sesWrapper';
+export * from './wrappers/redisWrappers/redisWrapper';
+export * from './wrappers/redisWrappers/redisPubSubWrapper';
 export * from './wrappers/emailWrappers/sendgridEmailWrapper';
 export * from './wrappers/emailWrappers/gmailWrapper';
 export * from './wrappers/twilloSMSwrapper';
