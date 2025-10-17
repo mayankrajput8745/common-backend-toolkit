@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.2.0...v2.3.0) (2025-10-17)
+
+
+### Features
+
+* Add AWS and Redis wrappers for enhanced service integration ([e7d6399](https://github.com/mayankrajput8745/common-backend-toolkit/commit/e7d6399f5dea4d11c1b77335fea62a24c0a87aa7))
+* Add cuid2 for ID generation and update queue helper methods ([0259cdb](https://github.com/mayankrajput8745/common-backend-toolkit/commit/0259cdb429a26bdcdefde397010f7e52dcaab1a1))
+* Add KafkaWrapper class for managing Kafka producer and consumer connections ([e8ab46a](https://github.com/mayankrajput8745/common-backend-toolkit/commit/e8ab46ad019945becb11856464283425b639352c))
+* Update dependencies and add Kafka wrapper for message handling ([3a17a5d](https://github.com/mayankrajput8745/common-backend-toolkit/commit/3a17a5d3692d3bf5a4caaffed8d0360dbd93b141))
+
 ## [2.2.0](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.1.0...v2.2.0) (2025-07-07)
 
 
