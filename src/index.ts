@@ -5,6 +5,7 @@ export * from './helpers/jwt';
 export * from './helpers/logger';
 export * from './helpers/nanoId';
 export * from './helpers/queue';
+export * from './helpers/validator';
 
 // Logging Middlewares
 export * from './middlewares/apiLogger';
@@ -26,5 +27,5 @@ export * from './wrappers/redisWrappers/redisWrapper';
 export * from './wrappers/redisWrappers/redisPubSubWrapper';
 export * from './wrappers/emailWrappers/sendgridEmailWrapper';
 export * from './wrappers/emailWrappers/gmailWrapper';
-export * from './wrappers/twilloSMSwrapper';
+export * from './wrappers/twilloWrapper';
 export * from './wrappers/kafkaWrapper';
