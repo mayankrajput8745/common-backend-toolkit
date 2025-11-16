@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.0](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.3.0...v2.4.0) (2025-11-16)
+
+
+### Features
+
+* Update dependencies and enhance SESWrapper with SESv2Client integration ([fa0f4be](https://github.com/mayankrajput8745/common-backend-toolkit/commit/fa0f4be062d03e8f23c05231d493bb87ac69645f))
+* Update dependencies, add Plivo and Twilio wrappers, and implement Joi validation ([33ab059](https://github.com/mayankrajput8745/common-backend-toolkit/commit/33ab059b6c21673fc3404441ef579758269f117f))
+
 ## [2.3.0](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.2.0...v2.3.0) (2025-10-17)
 
 
