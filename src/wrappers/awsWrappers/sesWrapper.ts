@@ -1,42 +1,30 @@
-import { SES, SESClientConfig } from "@aws-sdk/client-ses";
-import * as sesLibrary from "@aws-sdk/client-ses";
+import nodemailer, { SendMailOptions, Transporter } from "nodemailer";
+import { SESv2Client, SendEmailCommand, SESv2ClientConfig } from "@aws-sdk/client-sesv2";
 
 export class SESWrapper {
-    private _clients = new Map<string, SES>();
+  private transporter?: Transporter;
 
-    getsesLibrary() {
-        return sesLibrary;
-    }
+  async connect(sesConfig: SESv2ClientConfig) {
+    const sesClient = new SESv2Client(sesConfig);
 
-    async connect(config: SESClientConfig, regions: string[]) {
-        try {
-            for (const region of regions) {
-                const ses = new SES({ ...config, region });
-                this._clients.set(region, ses);
-            }
-        } catch (error) {
-            throw new Error(`Error while connecting to the SES regions. ${error}`);
-        }
-    }
+    this.transporter = nodemailer.createTransport({
+      SES: { sesClient, SendEmailCommand }
+    });
 
-    getClient(region: string) {
-        if (!this._clients.has(region)) throw new Error(`Cannot access SES client for ${region} before connecting`);
-        return this._clients.get(region);
-    }
+    await this.transporter.verify();
+  }
 
-    async destroy(regions: string[]) {
-        try {
-            for (const region of regions) {
-                if (this._clients.has(region)) {
-                    const client = this._clients.get(region);
-                    if (client) {
-                        client.destroy();
-                        this._clients.delete(region);
-                    }
-                }
-            }
-        } catch (error) {
-            throw error;
-        }
+  disconnect(): void {
+    if (!this.transporter) {
+      throw new Error("Cannot access SES client before connecting");
     }
+    this.transporter.close();
+  }
+
+  async sendMail(mailOptions: SendMailOptions): Promise<void> {
+    if (!this.transporter) {
+      throw new Error("Cannot access SES client before connecting");
+    }
+    await this.transporter.sendMail(mailOptions);
+  }
 }

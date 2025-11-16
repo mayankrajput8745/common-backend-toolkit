@@ -53,6 +53,7 @@ export class ValidationsParams {
     issuer: string;
     audience: string;
     userId: string;
+    data: any;
 
     constructor(issuer: string, audience: string, userId: string) {
         this.issuer = issuer;
@@ -68,6 +69,8 @@ type Payload = {
     iat: number;
     exp: number;
     validity: number;
+    data: any;
+    tokenId: string;
 }
 
 const HOUR_IN_DAY = 24;
@@ -80,12 +83,16 @@ export class JwtPayload {
     userId: string;
     iat: number;
     exp: number;
+    data: any;
+    tokenId: string;
 
-    constructor({ iss, aud, userId, validity }: Payload) {
+    constructor({ iss, aud, userId, validity, data, tokenId }: Payload) {
         this.iss = iss;
         this.aud = aud;
         this.userId = userId;
         this.iat = Math.floor(Date.now() / 1000);
         this.exp = this.iat + (validity / HOUR_IN_DAY * MINUTES_IN_HOUR * SECONDS_IN_MINUTE);
+        this.data = data;
+        this.tokenId = tokenId;
     }
 }
