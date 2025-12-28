@@ -1,6 +1,6 @@
 {
   "name": "common-backend-toolkit",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,7 @@
     "minorRelease": "npm run release -- --release-as minor",
     "majorRelease": "npm run release -- --release-as major",
     "patchRelease": "npm run release -- --release-as patch",
-    "publishRepo": "npm run build && npm run minorRelease && git push --follow-tags origin main && npm publish"
+    "publishRepo": "npm run build && npm run patchRelease && git push --follow-tags origin main && npm publish"
   },
   "keywords": [],
   "author": "Mayank Rajput<mayankrajput8745@gmail.com>",
