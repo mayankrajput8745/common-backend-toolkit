@@ -22,14 +22,14 @@ export const authentication = (
 ) => {
     return async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const accessToken = req.headers['x-access-token'];
-            const refreshToken = req.headers['x-refresh-token'];
+            const authHeader = req.headers['authorization'];
+            if (!authHeader || !authHeader.startsWith('Bearer ')) {
+                throw new AuthFailureError('Authorization header missing or malformed');
+            }
 
-            if (!accessToken) throw new AuthFailureError('Access token not provided');
-            if (!refreshToken) throw new AuthFailureError('Refresh token not provided');
-
+            const token = authHeader.split(' ')[1];
             const payload = verify(
-                accessToken.toString(),
+                token,
                 publicKey,
                 validations
             ) as JwtPayload;
@@ -39,7 +39,7 @@ export const authentication = (
             }
 
             // Attach payload to response locals
-            res.locals.payload = payload;
+            req.payload = payload;
             return next();
         } catch (err) {
             next(err);
