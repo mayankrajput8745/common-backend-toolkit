@@ -1,6 +1,6 @@
 {
   "name": "common-backend-toolkit",
-  "version": "2.7.2",
+  "version": "2.7.3-beta.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -28,7 +28,7 @@
     "@types/amqplib": "^0.10.8",
     "@types/jest": "^30.0.0",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/lodash": "^4.17.20",
+    "@types/lodash": "^4.17.21",
     "@types/nodemailer": "^7.0.3",
     "@types/request-ip": "^0.0.41",
     "chalk": "^5.6.2",
@@ -74,5 +74,16 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "overrides": {
+    "braces": "^3.0.3",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.8",
+    "shelljs": "^0.10.0",
+    "form-data": "^4.0.5",
+    "tmp": "^0.2.5",
+    "micromatch": "^4.0.8",
+    "merge": "^2.1.1",
+    "tough-cookie": "^6.0.0"
   }
 }
