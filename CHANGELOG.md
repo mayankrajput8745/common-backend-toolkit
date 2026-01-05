@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.5](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.7.4...v2.7.5) (2026-01-05)
+
 ### [2.7.4](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.7.3...v2.7.4) (2026-01-05)
 
 ### [2.7.3](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.7.3-beta.0...v2.7.3) (2026-01-05)
