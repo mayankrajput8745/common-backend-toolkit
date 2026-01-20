@@ -1,5 +1,5 @@
 import { transports, format } from 'winston';
-import expressWinston, { logger } from 'express-winston';
+import expressWinston from 'express-winston';
 import { isEmpty } from 'lodash';
 import chalk from 'chalk';
 

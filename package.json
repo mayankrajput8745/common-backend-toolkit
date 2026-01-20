@@ -43,13 +43,15 @@
     "@aws-sdk/client-lambda": "^3.932.0",
     "@aws-sdk/client-s3": "^3.932.0",
     "@aws-sdk/client-sesv2": "^3.932.0",
+    "@grpc/grpc-js": "^1.14.3",
+    "@grpc/proto-loader": "^0.8.0",
     "@sendgrid/mail": "^8.1.6",
     "@types/express": "^5.0.5",
     "@types/node-fetch": "^2.6.13",
     "amqplib": "^0.10.9",
     "bull": "^4.16.5",
     "cloudinary": "^2.8.0",
-    "commitizen": "^3.0.0",
+    "commitizen": "^4.3.1",
     "cron-parser": "^5.4.0",
     "express": "^5.1.0",
     "express-winston": "^4.2.0",
@@ -62,11 +64,9 @@
     "node-fetch": "^3.3.2",
     "nodemailer": "^7.0.10",
     "npm-check-updates": "^19.1.2",
-    "plivo": "^4.75.1",
     "request-ip": "^3.3.0",
     "rimraf": "^6.1.0",
     "standard-version": "^9.5.0",
-    "twilio": "^5.10.5",
     "util": "^0.12.5",
     "winston": "^3.18.3"
   },
@@ -84,6 +84,7 @@
     "tmp": "^0.2.5",
     "micromatch": "^4.0.8",
     "merge": "^2.1.1",
-    "tough-cookie": "^6.0.0"
+    "tough-cookie": "^6.0.0",
+    "diff": "^8.0.3"
   }
 }
