@@ -11,6 +11,8 @@ env:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # Skip if this push was the version-bump commit from CI itself
+    if: "!startsWith(github.event.head_commit.message, 'chore(release)')"
 
     steps:
       - name: Checkout code
@@ -32,7 +34,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build & Publish
-        run: npm run publishRepo
+      - name: Build
+        run: npm run build
+
+      - name: Bump patch version
+        run: npm run patchRelease
+
+      - name: Push version bump and tag
+        run: git push --follow-tags origin main
+
+      - name: Publish to npm
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
