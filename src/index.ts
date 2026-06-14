@@ -27,5 +27,4 @@ export * from './wrappers/redisWrappers/redisWrapper';
 export * from './wrappers/redisWrappers/redisPubSubWrapper';
 export * from './wrappers/emailWrappers/sendgridEmailWrapper';
 export * from './wrappers/emailWrappers/gmailWrapper';
-export * from './wrappers/twilloWrapper';
 export * from './wrappers/kafkaWrapper';
