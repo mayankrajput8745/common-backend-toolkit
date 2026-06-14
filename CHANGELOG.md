@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.6](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.7.5...v2.7.6) (2026-06-14)
+
+
+### Features
+
+* update dependencies and add gRPC wrapper implementation; remove Plivo and Twilio wrappers ([6e9b983](https://github.com/mayankrajput8745/common-backend-toolkit/commit/6e9b983f712dddf6ee7d2ecca0598ba1b6dbf7a8))
+
+
+### Bug Fixes
+
+* remove stale twilloWrapper export from index ([d5d81c7](https://github.com/mayankrajput8745/common-backend-toolkit/commit/d5d81c77b55c550c971377d072ac11acb1d488b8))
+
 ### [2.7.5](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.7.4...v2.7.5) (2026-01-05)
 
 ### [2.7.4](https://github.com/mayankrajput8745/common-backend-toolkit/compare/v2.7.3...v2.7.4) (2026-01-05)
